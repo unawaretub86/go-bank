@@ -55,7 +55,7 @@ func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (Trans
 	err := store.execTx(ctx, func(q *Queries) error {
 		var err error
 
-		result.Transfer, err = q.CreateTransfer
+		result.Transfer, err = q.CreateTransfer()
 
 		return nil
 	})
