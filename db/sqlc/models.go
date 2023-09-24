@@ -12,7 +12,7 @@ import (
 type Account struct {
 	ID        int64
 	Owner     string
-	Balance   int64
+	Balance   string
 	Currency  string
 	CreatedAt sql.NullTime
 }
@@ -21,15 +21,15 @@ type Entry struct {
 	ID        int64
 	AccountID int64
 	// it can be positive or negative
-	Amount    int64
+	Amount    string
 	CreatedAt time.Time
 }
 
-type Tranfer struct {
+type Transfer struct {
 	ID            int64
 	FromAccountID int64
 	ToAccountID   int64
 	// it must be positive
-	Amount    int64
+	Amount    string
 	CreatedAt time.Time
 }

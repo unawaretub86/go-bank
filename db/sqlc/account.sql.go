@@ -21,7 +21,7 @@ INSERT INTO accounts (
 
 type CreateAccountParams struct {
 	Owner    string
-	Balance  int64
+	Balance  string
 	Currency string
 }
 
@@ -116,7 +116,7 @@ RETURNING id, owner, balance, currency, created_at
 
 type UpdateAccountParams struct {
 	ID      int64
-	Balance int64
+	Balance string
 }
 
 func (q *Queries) UpdateAccount(ctx context.Context, arg UpdateAccountParams) (Account, error) {
